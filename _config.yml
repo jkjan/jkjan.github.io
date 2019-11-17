@@ -25,13 +25,13 @@ url                      : "https://jkjan.github.io"
 baseurl                  : ""
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : "22045424.jpg"
+logo                     : #
 masthead_title           : "Blog Du Programming"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
   provider               : "disqus"
-  disqus:
+  disqus:       
     shortname            : "blog-du-programming"
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
@@ -46,7 +46,7 @@ comments:
 staticman:
   allowedFields          : ['name', 'email', 'url', 'message']
   branch                 : # "master"
-  commitMessage          : # "New comment by {fields.name}"
+  commitMessage          : # "New by {fields.name}"
   filename               : # comment-{@timestamp}
   format                 : # "yml"
   moderation             : # true
@@ -93,7 +93,7 @@ og_image                 : # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
+  type                   : # Person or Organization (to Person)
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
 
@@ -289,6 +289,6 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
