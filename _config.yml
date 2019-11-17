@@ -44,7 +44,7 @@ comments:
     theme                : # "github-light" (default), "github-dark"
     issue_term           : # "pathname" (default)
 staticman:
-  allowedFields          : # ['name', 'email', 'url', 'message']
+  allowedFields          : ['name', 'email', 'url', 'message']
   branch                 : # "master"
   commitMessage          : # "New comment by {fields.name}"
   filename               : # comment-{@timestamp}
@@ -65,7 +65,7 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-search                   : # true, false (default)
+search                   : true
 search_full_content      : # true, false (default)
 search_provider          : # lunr (default), algolia, google
 algolia:
@@ -111,7 +111,7 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I believe in myself. And wish you do so too."
   location         : "Somewhere in South Korea"
-  email            : 
+  email            : "ytom2607@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
