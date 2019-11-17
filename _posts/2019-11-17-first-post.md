@@ -4,7 +4,7 @@ date: 2019-11-17 08:26:28 -0400
 categories: jekyll update
 ---
 
-This is the first osting.
+This is the first posting.
 
 ```c++
 #include <iostream>
