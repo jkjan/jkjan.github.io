@@ -18,10 +18,9 @@ push 16 혹은 32비트 레지스터, 상수, 세그먼트 레지스터,
 
 세그먼트의 구성  
 
-|---|---|
-|stack|   |
-|heap|   |
-|data|   |
-|code|   |
+|stack|
+|heap|
+|data|
+|code|
 
 Stack Segment 는 운영체제에 의해서 알아서 관리된다.  
