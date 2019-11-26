@@ -80,6 +80,6 @@ ECX 로 저장된다는 뜻이다.
 `lea EAX, [EBX + ECX*4 + 100]` 는  
 EAX에 EBX에서 ECX * 4 + 100 만큼 더 간 주소에 담긴 값을 EAX에 저장한다는 의미이다.  
 
-lea vs mov 
+lea vs mov   
 lea 는 주소를 복사한다.  
 mov 는 값을 복사한다.  
