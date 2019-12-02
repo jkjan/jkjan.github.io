@@ -95,6 +95,10 @@ int func(int x, int y) {
 }
 ```
 
+위의 C 코드는 아래의 어셈블리어와 같은 일을 한다.  
+
+
+
 ```nasm
 ...
 push  dword 2
