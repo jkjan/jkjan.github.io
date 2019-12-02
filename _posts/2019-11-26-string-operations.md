@@ -28,7 +28,9 @@ data segment 에서부터 현재 esi 가 갖고 있는 값만큼 떨어진 곳�
 al, ax 혹은 eax 으로 불러온다.  
 
 ```nasm
-lodsb``` 는
+lodsb
+``` 
+는
 data segment 의 esi 가 가리키고 있는 바이트 단위 string 을 a 레지스터로 가져오라는 뜻이다.  
 
 ```nasm
