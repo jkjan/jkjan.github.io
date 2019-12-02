@@ -19,7 +19,7 @@ pop  ebp
 와 같은 방식으로 
 1. ebp의 저장 `push ebp`
 2. esp의 저장 `mov ebp, esp`
-3. 지역변수 할당 `sub esp, LOCAL_BYTES`
+3. 지역변수 할당 `sub esp, LOCAL_BYTES`  
 ~ 함수의 동작 ~
 4. esp 복구 `mov esp, ebp`
 5. ebp 복구 `pop ebp`
