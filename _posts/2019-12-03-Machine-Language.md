@@ -18,7 +18,7 @@ title : Machine Language
 
 # 일반적인 기계 명령어 형식
 
-|접두사|op코드|ModRM(연산자 지정자)|주소/Displacement|상수|
+|접두사|op코드|ModRM(연산자 지정자)</br>|주소/Displacement|상수|
 |:---:|:---:|:---:|:---:|:---:|
 |0 ~ 4|1 ~ 2|0 ~ 2|0 ~ 4|0 ~ 4(byte)|  
 
