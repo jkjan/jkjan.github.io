@@ -18,10 +18,10 @@ MIPS 의 명령어는 굉장히 축소되어 있으며,
 명령어의 길이가 한정적이다.  
 
 MIPS 명령어는 총 32비트로,  
-| op | rs | rt | rd | shamt | funct |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-|opcode|(register) source|target|destination|shift amount|function code|
-|6비트|5비트|5비트|5비트|5비트|6비트|
+| op | rs | rt | rd | shamt | funct |  
+|:---:|:---:|:---:|:---:|:---:|:---:|  
+|opcode|(register) source|target|destination|shift amount|function code|  
+|6비트|5비트|5비트|5비트|5비트|6비트|  
 
 로 이루어져있다.  
 단, 이는 R타입 명령어일 때 한정이며,  
