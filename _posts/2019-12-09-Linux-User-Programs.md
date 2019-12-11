@@ -54,9 +54,10 @@ segment 들의 주소를 linear address 로 바꾸는데 필요한 자료구조�
 
 
 ### Protected Mode 에서의 Segmentation  
-Segment Register 는 Descriptor Table 의 어느 위치에  
-자기가 가르킬 Segment의 주소가 있는지를 저장한다.  
+Segment Register 는 
+Descriptor Table 의 어느 위치에 자기가 가르킬 Segment의 주소가 있는지를 저장한다.  
 그래서 이를 Segment Selector 라고 한다.  
+Code, Data, Stack 세그먼트 등마다 각각 하나씩 있다. (CS, DS, SS...)  
 
 Segment Selector 엔 다양한 값들이 저장되어 있다.  
 
@@ -73,6 +74,15 @@ Segment Selector 엔 다양한 값들이 저장되어 있다.
 커널 프로그램은 다른 프로그램들의 세그먼트에 접근할 수 있다.  
 하지만 커널이 아닌 일반 사용자 프로그램은 다른 프로그램의 세그먼트에 접근할 수 없다.  
 
+세그먼트 셀렉터의 끝 두 비트는  
+소유권을 나타내는 비트로,  
+00부터 11까지가 있는데 이는 작을 수록 큰 힘을 가진다.  
+셀렉터의 마지막 두 비트가 10인데,  
+도달한 세그먼트가 11 이라면 세그먼트에 접근이 가능하고,  
+00 이라면 접근이 불가하다. 
+
+즉 이 값이 00이라면 모든 세그먼트에 (운영체제가 이에 해당),  
+11이라면 그 프로그램의 세그먼트에만 접근이 가능하다. (일반 사용자 프로그램)  
 
 ## GDT, LDT
 
