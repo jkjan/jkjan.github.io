@@ -110,7 +110,7 @@ Base 주소 지정 방식을 따라서
 명령어의 rt 부분의 주소와 16비트가 Sign-Extend 된 값을 더해야 하므로  
 Sign-Extend 와 ALU 유닛이 추가적으로 붙는다.  
 
-[!lw](./lw.png)
+![lw](./lw.png)
 
 
 ### 분기 명령어의 실행
