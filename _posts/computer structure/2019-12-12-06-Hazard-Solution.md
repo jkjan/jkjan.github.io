@@ -1,6 +1,7 @@
 ---
 date : 2019-12-12
 title : Hazard Solution
+categories : [Computer Structure]
 ---
 
 ## 데이터 해저드 : 전방전달 vs 지연  

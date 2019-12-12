@@ -1,6 +1,7 @@
 ---
 title: "String Operations"
 date: 2019-11-26 08:26:28 -0400
+categories : [System Software]
 ---
 
 ### String Operations

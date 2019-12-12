@@ -1,6 +1,7 @@
 ---
 date : 2019-12-09
 title : Linux User Programs
+categories : [System Software]
 ---
 
 ### 멀티태스킹에서의 메모리 변환

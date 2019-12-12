@@ -1,6 +1,7 @@
 ---
 title: "Data Addressing Modes"
 date: 2019-12-02 08:26:28 -0400
+categories : [System Software]
 ---
 
 ### Data Addressing Modes

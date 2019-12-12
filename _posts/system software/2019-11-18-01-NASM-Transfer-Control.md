@@ -1,6 +1,7 @@
 ---
 title: "nasm 흐름 제어"
 date: 2019-11-18 08:26:28 -0400
+categories : [System Software]
 ---
 
 control transfer instructions.

@@ -1,6 +1,7 @@
 ---
 date : 2019-12-12
 title : Hazard Solution 2
+categories : [Computer Structure]
 ---
 
 데이터 해저드에서 전방전달을 사용해서 해결할 수 없는 문제가 있다.  

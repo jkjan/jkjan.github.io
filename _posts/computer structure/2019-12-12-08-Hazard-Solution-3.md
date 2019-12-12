@@ -1,6 +1,7 @@
 ---
 date : 2019-12-12
 title : Hazard Solution 3
+categories : [Computer Structure]
 ---
 
 해저드의 종류엔 세 가지가 있다.  

@@ -1,6 +1,7 @@
 ---
 date : 2019-12-03
 title : Stack and Subprograms 3
+categories : [System Software]
 ---
 
 ## Enter 와 Leave 명령어
