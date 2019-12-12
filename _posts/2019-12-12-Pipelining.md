@@ -114,3 +114,20 @@ WB 단계
 
 8. MEM/WB의 값을 레지스터에 저장한다.  
 
+
+### 제어신호
+
+파이프라인 단계에 따라  
+이전에 이야기했던 제어신호는 이렇게 나뉜다.  
+
+1. IF : 없다. 항상 같은 일이 일어난다.  
+2. ID : 없다. 역시 항상 같다.  
+3. EX : RegDst, ALUOp, ALUSrc  
+4. MEM : Branch, MemRead (lw 에서 1), MemWrite (sw 에서 1)  
+5. WB : MemToReg, RegWrite  
+
+정리된 제어신호의 표는 다음과 같다.  
+
+![control](./control.jpg)
+
+
