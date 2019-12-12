@@ -1,5 +1,4 @@
 ---
-layout : post
 date : 2019-12-11
 title : Processor
 categories : [Computer Science]
