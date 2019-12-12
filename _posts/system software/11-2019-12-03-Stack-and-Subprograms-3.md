@@ -1,6 +1,6 @@
 ---
 date : 2019-12-03
-title : Stack and subprogram 3
+title : Stack and Subprograms 3
 ---
 
 ## Enter 와 Leave 명령어

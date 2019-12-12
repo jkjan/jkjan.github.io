@@ -82,7 +82,7 @@ Mod Reg R/M
 
 위는 16진법으로 F8이고,  
 add 의 opcode 가 03이므로  
-`add edi, eax` 는 030F이 된다.  
+`add edi, eax` 는 03F8이 된다.  
 
 
 # Mod 비트 사용법

@@ -1,5 +1,5 @@
 ---
-title: "Stack and subprograms"
+title: "Stack and Subprograms"
 date: 2019-12-02 08:26:28 -0400
 ---
 ### 스택의 목적?  
