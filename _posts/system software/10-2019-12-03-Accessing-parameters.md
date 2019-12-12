@@ -24,7 +24,7 @@ ebp 에 들어있는 값은 바뀌지 않는다.
 ebp 는 스택의 기준 주소가 된다. 그래서 ebp 에 index 를 더해서  
 parameter 에 접근한다.  
 
-![ebp](./ebp.png)
+![ebp](./img/ebp.png)
 
 
 ## 일반적인 함수 호출자와 피호출자의 형태와 매개변수 전달  

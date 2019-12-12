@@ -11,9 +11,9 @@ title : Machine Language
 어셈블 - 어셈블리 코드를 기계어로 바꾸는 과정  
 어셈블러 - 어셈블리어를 입력으로 받아 기계어를 만들어 출력하는 프로그램  
 
-![machine](./machine.png)
+![machine](./img/machine.png)
 
-![jump](./jump.png)
+![jump](./img/jump.png)
 
 
 # 일반적인 기계 명령어 형식
