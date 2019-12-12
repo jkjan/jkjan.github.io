@@ -22,6 +22,7 @@ subtitle                 : # site tagline that appears below site title in masth
 name                     : "Kyojun Jin"
 description              : "I believe in myself. And wish you do so too."
 url                      : "https://jkjan.github.io"
+category_dir             : category/
 baseurl                  : ""
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
