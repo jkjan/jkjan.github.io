@@ -5,7 +5,7 @@ title : Stack and subprogram 2
 
 ## Accessing Parameters with ESP
 
-![esp](./esp.png)
+![esp](./img/esp.png)
 
 ```nasm
 print_int : 
