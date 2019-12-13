@@ -19,7 +19,7 @@ categories : [Computer Structure]
 
 예)  
 
-```MIPS
+```mips
 sub  	$2,  $1, $3 
 and  	$12, $2, $5
 or   	$13, $6, $2 
@@ -73,7 +73,7 @@ Forwarding Unit :
 
 ### 이중 데이터 해저드
 
-```MIPS
+```mips
 add $1, $1, $2
 add $1, $1, $3
 add $1, $1, $4
