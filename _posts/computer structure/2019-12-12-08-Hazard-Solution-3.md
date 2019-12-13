@@ -44,7 +44,7 @@ categories : [Computer Structure]
 
 분기가 MEM 단계에서 실행되므로, 3클럭 분기 손실이 일어난다.  
 
-```MIPS
+```
 beq $1,$3, 28
 and $12, $2, $5
 ``` 
