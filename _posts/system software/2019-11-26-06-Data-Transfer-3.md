@@ -4,7 +4,7 @@ date: 2019-11-26 08:26:28 -0400
 categories : [System Software]
 ---
 
-### 3. Type Conversion Instructions
+### 4. Type Conversion Instructions
 
 1. cbw
 2. cwde
