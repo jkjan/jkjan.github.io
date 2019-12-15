@@ -63,7 +63,7 @@ ID/EX 단계의 (즉 직전) MemRead 가 1이고 (이는 lw 일 때만 1)
   
 ### 지금까지의 구조도
   
-![lwhazard](./lwhazard.png)
+![image](https://user-images.githubusercontent.com/22045424/70857412-0373ca00-1f31-11ea-81c5-6bfa23544e3a.png)
   
 Hazard Detection Unit에 입력되는 선을 보면  
 왼쪽 두 개는 IF/ID 레지스터에서 나온 선으로, 지금 실행하려는 명령어의 피연산자 둘에서 나왔고  
