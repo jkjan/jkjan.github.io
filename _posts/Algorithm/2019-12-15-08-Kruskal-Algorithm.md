@@ -43,7 +43,7 @@ Minimum Cost Spanning Tree 라고 한다.
 1번에서 구한 해 중 제약 조건에 걸리지 않은 이들이다.  
 이들은 이미 스패닝 트리라고 부를 수 있다.  
 
-3. 목적 함수 도입 (objective function)
+3. 목적 함수 도입 (objective function)  
 우리의 목적은 가중치의 합을 최소화하는 것이다.  
 
 4. 최적의 해 (optimal solution)
