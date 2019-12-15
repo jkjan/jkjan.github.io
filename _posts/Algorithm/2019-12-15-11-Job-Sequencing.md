@@ -96,20 +96,11 @@ int getJ(int n, job* todo, int* J) {
 		y = 1;
 		J[cnt] = i;
 		while (y < i) {
-			cout << y << ", " << cnt << " : " << endl;
 			if (todo[J[y]].d > todo[J[cnt]].d) {
 				swap(J+y, J+cnt);
-				cout << "swap " << y << ' ' << cnt << endl;
 			}
 			y++;
-
-			for (int j = 1; j <= cnt; j++) {
-				cout << todo[J[j]].d << ' ';
-			}
-			cout << endl;
 		}
-		cout << endl;
-
 		if (todo[J[cnt]].d >= i)
 			cnt++;
 	}
@@ -203,20 +194,11 @@ int getJ(int n, job* todo, int* J) {
 		y = 1;
 		J[cnt] = i;
 		while (y < i) {
-			cout << y << ", " << cnt << " : " << endl;
 			if (todo[J[y]].d > todo[J[cnt]].d) {
 				swap(J+y, J+cnt);
-				cout << "swap " << y << ' ' << cnt << endl;
 			}
 			y++;
-
-			for (int j = 1; j <= cnt; j++) {
-				cout << todo[J[j]].d << ' ';
-			}
-			cout << endl;
 		}
-		cout << endl;
-
 		if (todo[J[cnt]].d >= i)
 			cnt++;
 	}
