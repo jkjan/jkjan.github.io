@@ -46,7 +46,7 @@ Minimum Cost Spanning Tree 라고 한다.
 3. 목적 함수 도입 (objective function)  
 우리의 목적은 가중치의 합을 최소화하는 것이다.  
 
-4. 최적의 해 (optimal solution)
+4. 최적의 해 (optimal solution)  
 버텍스를 다 이으면서  
 n-1개의 엣지만 사용하고  
 가중치 합이 최소가 되는  
