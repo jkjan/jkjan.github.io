@@ -51,7 +51,7 @@ extra segment 에서 edi 만큼 떨어진 곳에 현재 a 레지스터를 저장
 # movs 명령어  
 extra segment 에서 edi 만큼 떨어진 곳에 data segment 에서 esi 만큼 떨어진 곳의 데이터를 저장한다.  
 movsb, movsd 가 있다. 각각 byte 단위, double word 단위의 스트링이다.  
-복사가 일어난 후 edi 는 증가, esi 는 감소한다.  
+복사가 일어난 후 edi, esi 는 증가/감소한다.  
   
   
   
