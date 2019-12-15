@@ -40,7 +40,7 @@ segment 내의 index, offset 을 통해 주소를 지정하나,
   
   
 ## Protected Mode
-CR0 레지스터의 0번째 값을 clear 하면  
+CR0 레지스터의 0번째 값을 set 하면  
 Protected mode 가 활성화된다.  
 
 Protected mode 에선  
