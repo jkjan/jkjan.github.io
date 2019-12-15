@@ -39,7 +39,7 @@ Minimum Cost Spanning Tree 라고 한다.
 그래프에서 버텍스를 다 이으면서 그려지는 트리 (subgraph) 는 많다.  
 단, 제약 조건으로 이 중 n-1 개의 엣지를 쓰는 걸 스패닝 트리라고 하기로 한다.  
 
-2. 실제 가능한 해 (feasible solution)
+2. 실제 가능한 해 (feasible solution)  
 1번에서 구한 해 중 제약 조건에 걸리지 않은 이들이다.  
 이들은 이미 스패닝 트리라고 부를 수 있다.  
 
