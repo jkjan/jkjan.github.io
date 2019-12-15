@@ -56,7 +56,7 @@ Forwarding Unit :
 
 전방전달 유무에 따른 회로 비교
 
-![forwarding](./img/forwarding.jpg)
+![image](https://user-images.githubusercontent.com/22045424/70857408-f5be4480-1f30-11ea-98e5-1c2b24eef7de.png)
 
 
 ### 전방전달 MUX의 제어신호
