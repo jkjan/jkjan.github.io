@@ -53,7 +53,9 @@ add esp, 4
 pop 은 ebx, eax 순으로 해야 각 레지스터에 값이 보존된다.  
 
 스택의 모양
-![stack](./img/stack.png)
+
+![image](https://user-images.githubusercontent.com/22045424/70857347-e5599a00-1f2f-11ea-8753-7575ed15396b.png)
+
 
 
 
