@@ -12,9 +12,10 @@ categories : [System Software]
 어셈블 - 어셈블리 코드를 기계어로 바꾸는 과정  
 어셈블러 - 어셈블리어를 입력으로 받아 기계어를 만들어 출력하는 프로그램  
 
-![machine](./img/machine.png)
+![image](https://user-images.githubusercontent.com/22045424/70857364-2356be00-1f30-11ea-86ee-b9c57a348ad7.png)
 
-![jump](./img/jump.png)
+![image](https://user-images.githubusercontent.com/22045424/70857357-07531c80-1f30-11ea-9e33-9cfabce2ed8a.png)
+
 
 
 # 일반적인 기계 명령어 형식
