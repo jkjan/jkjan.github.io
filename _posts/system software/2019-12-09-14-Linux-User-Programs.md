@@ -11,12 +11,12 @@ categories : [System Software]
 선형주소를 물리주소로 바꾸기 위해선 paging 작업이 필요하다.  
 일부 운영체제는 paging 을 하지 않아, 선형주소에서 따로 물리주소로 바뀌지 않는다.   
 
-** segmentation 의 필요성  
+**segmentation 의 필요성**  
 segment 내의 index, offset 을 통해 주소를 지정하나,  
 그 segment 가 정확히 어떤 주소에 있는지 (base) 를 알지 못하기 때문에  
 이를 운영체제가 segmentation 을 통해 linear address 로 바꾸어 주어야 한다.  
   
-** paging 작업  
+**paging 작업**  
 그리고 이를 약 4kb 단위의 page 로 쪼개서 RAM에 넣는다.  
 현재 프로그램 실행에 필요한 페이지만 RAM에 올라가므로,  
 프로그램의 페이지가 100개라 하여 100개 모두가 RAM 을 차지하지 않는다.  
