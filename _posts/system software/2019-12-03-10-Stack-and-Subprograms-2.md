@@ -6,7 +6,7 @@ categories : [System Software]
 
 ## Accessing Parameters with ESP
 
-![esp](./img/esp.png)
+![image](https://user-images.githubusercontent.com/22045424/70857339-c955f880-1f2f-11ea-8325-753c34fcedd1.png)
 
 ```nasm
 print_int : 
@@ -25,8 +25,7 @@ ebp 에 들어있는 값은 바뀌지 않는다.
 ebp 는 스택의 기준 주소가 된다. 그래서 ebp 에 index 를 더해서  
 parameter 에 접근한다.  
 
-![ebp](./img/ebp.png)
-
+![image](https://user-images.githubusercontent.com/22045424/70857325-8eec5b80-1f2f-11ea-9f99-1263f3c5c00c.png)
 
 ## 일반적인 함수 호출자와 피호출자의 형태와 매개변수 전달  
 
