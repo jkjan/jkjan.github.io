@@ -55,3 +55,47 @@ Stage 1 과 Stage r+1 은 단 하나의 버텍스를 가진다.
 V(i, j) 버텍스는 프로젝트 1, 2,.. i-1 에 할당해온 자원들의 수 j를 가리킨다.  
 엣지는 <V(i, j), V(i+1, l)> 이다. 이때 비용은 N(i, l-j) 이다.  
 
+
+### 코드
+
+```c++
+#include <iostream>
+#include <algorithm>
+
+#define MAX_INPUT 1000
+
+using namespace std;
+
+int table[MAX_INPUT][MAX_INPUT + 1];
+int memo[MAX_INPUT][MAX_INPUT + 1];
+int N, T; // 자원 수, 팀 수,
+int V(int i, int j);
+
+int main() {
+	int i, j; // 반복자
+	cin >> N >> T;
+	for (i = 0; i < N; i++) {
+		for (j = 1; j <= T; j++) {
+			cin >> table[i][j];
+		}
+	}
+	for (i = 0; i < MAX_INPUT; i++)
+		fill_n(*(memo + i), MAX_INPUT + 1, -1);
+
+	cout << V(1, 0);
+}
+
+int V(int i, int j) {
+	if (i == T) {
+		return table[N-j][i];
+	}
+	int maxP = 0;
+	for (int k = 0; k <= N - j; k++) {
+		if (memo[i + 1][j + k] == -1) {
+			memo[i + 1][j + k] = V(i + 1, j + k);
+		}
+		maxP = max(maxP, table[k][i] + memo[i + 1][j + k]);
+	}
+	return maxP;
+}
+```
