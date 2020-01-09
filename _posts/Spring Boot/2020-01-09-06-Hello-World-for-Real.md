@@ -130,7 +130,7 @@ class HelloController(private val helloService: HelloService) {
     }
 
     @GetMapping(path = ["/"])
-    fun readHello(): MutableList<Hello> = helloService.readHello()
+    fun readHello(): List<Hello> = helloService.readHello()
 
     @PutMapping(path = ["/{id}"])
     fun updateHello(@PathVariable("id") id : String, @Valid @NotNull @RequestBody hello: Hello) {
@@ -146,6 +146,9 @@ class HelloController(private val helloService: HelloService) {
     fun deleteAllHello() {
         helloService.deleteAllHello()
     }
+
+    @GetMapping(path = ["/{point}"])
+    fun findRicherThan(@PathVariable("point") point : Int) = helloService.findRicherThan(point)
 }
 ```
 
