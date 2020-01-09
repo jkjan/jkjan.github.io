@@ -1,5 +1,5 @@
 ---
-title : A Concept of Spring 2
+title : Concepts of Spring 2
 date : 2020-01-08
 categories : [Spring]
 ---
