@@ -53,6 +53,11 @@ spring.datasource.hikari.Connection-test-query=SELECT 1
 JPA 는 ORM 의 일종이다.  
 ORM 은 Object Relational Mapping 으로, DB의 relation (혹은 관계형 데이터)와 객체를 매핑해주는 것이다.  
 JDBC 써갖고 막 statement 쓰고 스트링으로 쿼리 일일히 날릴 필요가 없다.  
+그리고 실제로 쿼리를 작성해서 쓰는 것이 아니기 때문에  
+DB를 바꾸더라도 전체 코드를 수정하지 않고 쓸 수 있다.  
+JDBC 를 통해 "select ... from ... " 이렇게 쿼리를 날렸다면,  
+DB 가 바뀌면 아마 그 부분 (DAO) 을 다 갈아엎어야 할 것이다.  
+
 그쪽이 만들어놓은 함수들 (거의 있을 건 다 있음) 로 알아서 잘 쓰기만 하면 된다.  
 현재 ORM 에는 JPA 나 MyBatis 등이 있는데,  
 여기서는 JPA 를 쓰기로 한다.  
