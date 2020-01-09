@@ -105,7 +105,7 @@ controller 라는 package 안에 HelloController 라는 클래스를 하나 생�
 
 그리고 그 안의 코드는 이렇게 적자.  
 
-```
+```kotlin
 package com.example.memo.controller
 
 import com.example.memo.entity.Hello
