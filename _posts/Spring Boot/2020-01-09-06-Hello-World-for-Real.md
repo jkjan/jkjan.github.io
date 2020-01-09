@@ -51,7 +51,7 @@ spring.datasource.hikari.Connection-test-query=SELECT 1
 ## 2. JPA 
 
 JPA 는 ORM 의 일종이다.  
-ORM 은 Object Relational Mapping 으로, DB의 relaition (혹은 관계형 데이터)와 객체를 매핑해주는 것이다.  
+ORM 은 Object Relational Mapping 으로, DB의 relation (혹은 관계형 데이터)와 객체를 매핑해주는 것이다.  
 JDBC 써갖고 막 statement 쓰고 스트링으로 쿼리 일일히 날릴 필요가 없다.  
 그쪽이 만들어놓은 함수들 (거의 있을 건 다 있음) 로 알아서 잘 쓰기만 하면 된다.  
 현재 ORM 에는 JPA 나 MyBatis 등이 있는데,  
