@@ -111,6 +111,12 @@ JPA 는 메소드 이름으로 쿼리를 생성해준다.
 저 메소드는 point 가 사용자가 입력한 값보다 큰 Hello 들을 찾는 쿼리를 생성한다.  
 `"select * from hello where point > $point"` ? 이런 거 안 써도 된다.  
 
+[Spring JPA](https://docs.spring.io/spring-data/jpa/docs/1.4.1.RELEASE/reference/html/jpa.repositories.html)  
+
+물론 이름 짓는데 정해진 규칙은 따라줘야 한다.  
+규칙은 위 링크를 좀 내리다보면 나오는 표에 정리되어 있다.  
+이름 짓는 규칙도 쉽다.  
+
 이 repository 가 우리의 DAO (Data Access Object) 를 대신한다.  
 나중에 분명 우리가 쿼리를 따로 만들어서 쓰게 될텐데, 이때는 DAO 라는 클래스를 다시 분리해서 쓴다고 한다.  
 
