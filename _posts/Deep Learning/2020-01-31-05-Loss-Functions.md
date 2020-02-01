@@ -21,3 +21,10 @@ date : 2020-01-31
 평균 제곱 오차는 다음과 같은 식을 가진다.  
 
 ![mean_squared_error](https://mblogthumb-phinf.pstatic.net/MjAxNzA2MTBfMjk3/MDAxNDk3MDc3MTMwOTQ2.GgGlorZevi3xnKcBFHqCrG6JKGaWMa-IvVv-927bzecg.8JF52k5hIgKhdEbkzcoo_yPW6Hac3WIucgThhTGvFnsg.JPEG.wideeyed/MSE_formula.jpg?type=w2)
+
+다음은 파이썬으로 구현한 평균 제곱 오차이다. 인수는 ndarray 로 받는다.  
+
+```python
+def meanSquaredError(y, t) :
+  return (np.sum((y-t)**2))/2
+```
