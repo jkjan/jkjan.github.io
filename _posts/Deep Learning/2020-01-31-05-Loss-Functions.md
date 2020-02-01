@@ -20,4 +20,4 @@ date : 2020-01-31
 손실 함수에는 평균 제곱 오차 (mean squared error), 교차 엔트로피 오차(cross entropy error)가 있다.  
 평균 제곱 오차는 다음과 같은 식을 가진다.  
 
-[!mean_squared_error](https://mblogthumb-phinf.pstatic.net/MjAxNzA2MTBfMjk3/MDAxNDk3MDc3MTMwOTQ2.GgGlorZevi3xnKcBFHqCrG6JKGaWMa-IvVv-927bzecg.8JF52k5hIgKhdEbkzcoo_yPW6Hac3WIucgThhTGvFnsg.JPEG.wideeyed/MSE_formula.jpg?type=w2)
+![mean_squared_error](https://mblogthumb-phinf.pstatic.net/MjAxNzA2MTBfMjk3/MDAxNDk3MDc3MTMwOTQ2.GgGlorZevi3xnKcBFHqCrG6JKGaWMa-IvVv-927bzecg.8JF52k5hIgKhdEbkzcoo_yPW6Hac3WIucgThhTGvFnsg.JPEG.wideeyed/MSE_formula.jpg?type=w2)
