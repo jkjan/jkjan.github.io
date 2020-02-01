@@ -26,5 +26,5 @@ date : 2020-01-31
 
 ```python
 def meanSquaredError(y, t) :
-  return (np.sum((y-t)**2))/2
+  return np.sum((y-t)**2)/2
 ```
