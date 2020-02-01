@@ -44,6 +44,17 @@ def crossEntropyError(y, t) :
 
 출력 레이블 값 중 0이 껴있을 때를 고려해 1e-7 를 더해준다.  
 
+단, 정답 레이블이 `[0, 1, 0, 0, 0]` 같이  
+하나의 1, 나머지는 0인 원핫레코딩 방식의 레이블이 아니라면 다음과 같이 구현한다.  
+```python
+def crossEntropyError(y, t) :
+  if y.dim == 1 :
+    t = t.reshape(1, t.size)
+    y = y.reshape(1, y.size)
+  batchSize = y.shape[0]
+  return -np.sum(np.log(y[np.arange(batchSize), t] + 1e-7)) / batchSize
+```
+
 
 # 미분
 
