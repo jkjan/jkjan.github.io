@@ -14,4 +14,10 @@ date : 2020-01-31
 신경망의 출력이 점점 정답에 다가가도록 하는 것을 의미한다. (학습)  
 이를 위해 손실 함수를 도입한다.  
 
-손실 함수란 
+손실 함수는 신경망의 출력과 정답을 인수로 가진다.  
+함수 안에서 출력과 정답을 비교하여 신경망의 출력이 정답에 **얼마나 가까운지**를 출력한다.  
+
+손실 함수에는 평균 제곱 오차 (mean squared error), 교차 엔트로피 오차(cross entropy error)가 있다.  
+평균 제곱 오차는 다음과 같은 식을 가진다.  
+
+[!mean_squared_error](https://mblogthumb-phinf.pstatic.net/MjAxNzA2MTBfMjk3/MDAxNDk3MDc3MTMwOTQ2.GgGlorZevi3xnKcBFHqCrG6JKGaWMa-IvVv-927bzecg.8JF52k5hIgKhdEbkzcoo_yPW6Hac3WIucgThhTGvFnsg.JPEG.wideeyed/MSE_formula.jpg?type=w2)
