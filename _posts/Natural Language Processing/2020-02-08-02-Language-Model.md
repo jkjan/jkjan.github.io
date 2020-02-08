@@ -35,7 +35,7 @@ date : 2020-02-08
 
 한국어는 교착어라 단어를 나누는데 의미적으로 어려움이 있으므로 여기선 영어로 설명한다.  
 
-"쇼팽은 저녁이나 밤에 대한 예술작품을 뜻하는 녹턴이라 불리는 총 21개의 피아노 곡을 작곡했다."
+"쇼팽은 저녁이나 밤에 대한 예술작품을 뜻하는 녹턴이라 불리는 총 21개의 피아노 곡을 작곡했다."  
 "Chopin composed total 21 piano pieces which are called 'Nocturne', meaning a work of art dealing with evening or night."  
 
 쇼팽에 대한 문서를 모아서 각 단어, 혹은 구 뒤에 어떤 단어가 올 확률을 계산한다고 하자.  
