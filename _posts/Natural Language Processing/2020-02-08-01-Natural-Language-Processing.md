@@ -63,7 +63,7 @@ where words or phrases from the vocabulary are mapped to vectors of real numbers
 이를 표로 나타내면 다음과 같다.   
 
 
-|단어문장||문장 1|문장 2|문장 3|  
+|단어문장|문장 1|문장 2|문장 3|  
 |:---:|:---:|:---:|:---:|  
 |나는|1|0|1|  
 |쇼팽|1|0|0|  
