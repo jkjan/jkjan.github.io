@@ -68,9 +68,9 @@ where words or phrases from the vocabulary are mapped to vectors of real numbers
 |쇼팽|1|0|0|  
 |어제|0|1|0|  
 |음악|1|1|1|  
-|을(를)|1|0|1| 
+|을(를)|1|0|1|  
 |시간|0|1|0|  
-|잤어요|0|1|0| 
+|잤어요|0|1|0|  
 |듣습니다|1|0|0|  
 |듣는|0|0|1|  
 |것을|0|0|1|  
