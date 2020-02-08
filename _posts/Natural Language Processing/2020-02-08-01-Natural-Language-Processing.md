@@ -216,3 +216,10 @@ format 으로 출력해도 한글이라 가지런히 정리가 안 돼서 임의
 
 ![image](https://user-images.githubusercontent.com/22045424/74085682-00273580-4abf-11ea-9e2b-b3ae92d8c88c.png)
 
+그냥 df만을 곱했다면 결과는 이렇다.  
+
+![image](https://user-images.githubusercontent.com/22045424/74085729-7deb4100-4abf-11ea-83c7-ec147026ae4e.png)
+
+그냥 df 를 곱했을 때보다, idf 를 곱하니까 여러 문장에서 등장한 단어들의 빈도(중요도)가 낮아졌다.  
+
+위 행렬을 TF-IDF 행렬이라고 한다.  
