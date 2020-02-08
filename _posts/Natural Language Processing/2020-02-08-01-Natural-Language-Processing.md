@@ -60,7 +60,8 @@ where words or phrases from the vocabulary are mapped to vectors of real numbers
 문장 2 : 어제 음악 시간에 잤어요.  
 문장 3 : 나는 음악 듣는 것을 좋아합니다.  
 
-이를 표로 나타내면 다음과 같다.  
+이를 표로 나타내면 다음과 같다.   
+
 
 |단어문장||문장 1|문장 2|문장 3|  
 |:---:|:---:|:---:|:---:|  
