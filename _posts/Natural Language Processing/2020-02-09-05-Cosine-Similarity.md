@@ -30,8 +30,8 @@ V개의 단어, D개의 문서로 표현되는 VxD 행렬에서 각각의 열을
 두번째는 코사인을 이용하는 법이다.  
 
 |구분|0|30|45|60|90|
-|:---:|:---:|:---:|:---:|:---:|
+|:---:|:---:|:---:|:---:|:---:|:---:|
 |cos|1|2/sqrt(3)|1/sqrt(2)|1/sqrt(3)|0|
 
-[!image](https://wikimedia.org/api/rest_v1/media/math/render/svg/a9f8c962f73f83456742caa95c89970a18a97f2e)
+![image](https://wikimedia.org/api/rest_v1/media/math/render/svg/a9f8c962f73f83456742caa95c89970a18a97f2e)
 
