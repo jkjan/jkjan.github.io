@@ -162,4 +162,18 @@ for i in range(0, len(myRecommendation)):
      
 실제 프로그램의 출력이다.  
 
-![image](https://user-images.githubusercontent.com/22045424/74098906-d45c8c00-4b60-11ea-9e9e-a7e8e70458f1.png)
+프로그램이 생각한 'Aerosmith - Dream On' 이란 노래와 가장 비슷한 노래 10곡이다.  
+
+![image](https://user-images.githubusercontent.com/22045424/74098906-d45c8c00-4b60-11ea-9e9e-a7e8e70458f1.png)  
+
+물론 이 프로그램은 가장 단순하고 간이적인 프로그램으로 결과가 좀 못 미더울 수 있다.  
+
+좀 특별한 단어, 잘 안 쓰는 단어가 많이 들어간 노래는 나름 괜찮은 결과를 내보낸다.  
+예를 들어 'Metallica - Master Of Puppets' 의 'Master' 같이  
+일상적이지 않은 단어가 많이 나오는 노래를 입력하면 아래와 같은 결과가 나온다.  
+
+![image](https://user-images.githubusercontent.com/22045424/74099043-a4ae8380-4b62-11ea-9eea-db3d1ffc2e3a.png)
+
+물론 이는 가사를 통한 추천으로, 노래의 분위기는 영 딴 판일 수도 있다.  
+예를 들어 입력한 노래는 마약 중독에 관한 유명 헤비메탈 노래이지만  
+결과 중 세번째의 Amy Grant - O Master, Let Me Walk With Thee 라는 노래는 찬송가이다. (...)  
