@@ -118,3 +118,224 @@ VT 는 주제 - 문서의 관계를 나타내는 행렬이라고 할 수 있다.
 VT 행렬에서 각 문서가 어느 주제에 해당하는지 볼 수 있고  
 그 문서에 해당하는 단어들에는 어떤 단어가 있는지 U 행렬에서 확인할 수 있다.  
 
+## 적용
+
+CNN 의 뉴스 기사는 크게 8가지의 카테고리로 나뉜다.  
+World, US Politics, Business, Health, Entertainment, Style, Travel, Sports 가 그것이다.  
+CNN 의 기사 파일을 받아서, 이를 카테고리별로 나누고 그에 맞는 상위 5개 키워드를 알아보고자 한다.  
+파일은 [여기](https://drive.google.com/uc?export=download&id=0BwmD_VLjROrfTHk4NFg2SndKcjQ)에서 받을 수 있다.  
+
+위 파일은 9만개가 넘는 .story 파일이 압축되어 있다.   
+메모장으로 열어보면 CNN 기사가 나오는 그냥 txt로 저장해도 되는 파일인데 .story로 저장이 되어있다.  
+나는 C++의 fstream으로 디렉토리 내의 모든 .story 문서를  
+한 txt 파일로 합친 후 데이터 학습(?) 을 진행하였다.  
+
+코드는 아래와 같다.  
+
+```C++
+#include <iostream>
+#include <dirent.h>
+#include <cstring>
+#include <fstream>
+
+int main() {
+    DIR *dir;
+    struct dirent *ent;
+
+    std::ofstream all;
+    all.open("all.txt");
+
+    if ((dir = opendir ("경로 ~ cnn/stories")) != NULL) {
+        /* print all the files and directories within directory */
+        while ((ent = readdir (dir)) != NULL) {
+            char word[1024];
+            if (ent->d_name[0] != '.') {
+                char dirname[1024] = "경로 ~ cnn/stories/";
+                std::ifstream file;
+                file.open(strcat(dirname, ent->d_name));
+                while (!file.eof()) {
+                    file >> word;
+                    all << word << " " ;
+                }
+                file.close();
+                all << "\n";
+            }
+        }
+        closedir (dir);
+        all.close();
+    } else {
+        perror("no file");
+        return EXIT_FAILURE;
+    }
+
+    return 0;
+}
+```
+
+위 코드를 실행하면 해당 cpp 파일이 있는 곳에 all.txt 라는 파일이 생성이 된다.  
+파일은 371mb 정도가 나올 것이다.  
+
+먼저 all.txt 파일이 생성이 됐으면  
+이를 읽어서 토크나이즈를 한다.  
+문제는 토크나이즈를 하면 단어가 다 쪼개지는데  
+사이킷런의 Tfidf 는 문서 단위로 입력을 받는다.  
+그래서 토크나이즈를 하고 다시 다 합쳐줘야 한다.  
+
+먼저 토크나이즈를 하는 부분이다.  
+
+```python
+cnnFile = open("../data/English/raw/cnn/all.txt", "r", encoding='UTF8')
+    cnnDoc = []
+    cnnTokenized = []
+    while True:
+        line = cnnFile.readline()
+        if len(line) == 0:
+            print("File read finished")
+            break
+        line = re.sub("[^a-zA-Z ]", "", line)
+        tokenized = word_tokenize(line)
+        for word in tokenized:
+            if word == "CNN" or word == "highlight":
+                tokenized.remove(word)
+        cnnTokenized.append(tokenized)
+```
+
+정규식으로 문자를 먼저 걸러준 다음 nltk의 토크나이즈를 한 번 거친다.  
+그리고 cnn 기사 파일에는 CNN이랑 @highlight 같은 단어가 많이 나와서 이들을 삭제해준다.   
+(nltk의 사용자 사전을 찾아보려고 했는데 간편하지가 않아서 그냥 이렇게 하는게 나을 거 같다.)  
+
+그리고 tfidf 를 위해 다시 합친 문장도 저장한다.  
+
+```python
+sent = ""
+for w in tokenized:
+    sent += (w + " ")
+cnnDoc.append(sent)
+```
+
+TF-IDF 행렬과 그에 따른 단어들도 저장해준다.  
+
+```python
+cnnTF_IDF = vectorizer.fit_transform(cnnDoc)
+with open("cnn-tf-idf.pkl", 'wb') as handle:
+    pickle.dump(cnnTF_IDF, handle)
+
+vocabs = vectorizer.get_feature_names()
+with open("cnn-terms.pkl", 'wb') as handle:
+    pickle.dump(vectorizer.get_feature_names(), handle)
+```
+
+with 아래 코드들은 피클파일로 저장해서 나중에 다시 쓰기 위함이다.  
+
+
+TruncatedSVD 행렬을 계산한다. n_components 는 내가 뽑아낼 주제의 개수이다.  
+위 식에서 t라고 보면 된다.  
+TruncatedSVD에서 components_ 라는 변수는 문서-주제 행렬이다.  
+즉 식에서 VT에 해당한다.  
+
+U, 시그마를 둘 다 쓸 상황이라면  
+`from scipy.sparse.linalg import svds` 에서 svds 함수를 쓰거나  
+`from numpy.linalg import svd` 에서 svd 함수를 써도 된다.  
+
+이 두 함수는 세 행렬을 모두 반환해준다.  
+
+```python
+svd = TruncatedSVD(n_components=8)
+svd.fit(cnnTF_IDF)
+topics = svd.components_
+```
+
+절대값으로 정렬한 후 큰 순으로 출력해준다.  
+참고로 문서가 92,579개이고 TfidfVectorizer 에서 단어를 1000개라고 설정했으므로   
+TF-IDF 행렬의 shape 를 찍어보면 (92579, 1000) 이라고 나올 것이고  
+그 중 components_ 는 주제 x 단어 이므로 (8, 1000) 이 나올 것이다.  
+아래 코드는 주제 별로 1000개의 단어 중 절대값 상위 5개만 출력하는 코드이다.  
+
+각 topic은 (1, 1000) 차원의 1행 1000열짜리 벡터이고  
+그 1000행짜리 array 를 argsort() 를 거치면 정렬이 되면서 인덱스가 같이 따라가서 그 인덱스 배열이 리턴이 된다.  
+즉 인덱스배열에 따라 뒤에서부터 그 인덱스에 해당하는 단어와 값을 출력하는 것이다.  
+
+```python
+for index, topic in enumerate(topics):
+    print("Topic %d : " % (index+1), end="")
+    print([(vocabs[i], topic[i].round(5)) for i in np.abs(topic).argsort()[:-6:-1]])
+```
+
+전체 코드는 아래와 같다.    
+
+
+```python
+import re
+import pickle
+import numpy as np
+from nltk.tokenize import word_tokenize
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.decomposition import TruncatedSVD
+
+cnnTF_IDF = None
+vocabs = None
+
+vectorizer = TfidfVectorizer(max_features=1000, lowercase=True, stop_words="english")
+
+try:
+    cnnTF_IDF = pickle.load(open("cnn-tf-idf.pkl", "rb"))
+    vocabs = pickle.load(open("cnn-terms.pkl", "rb"))
+    print("There is a tf-idf file")
+except FileNotFoundError:
+    print("No tf-idf file exists.")
+    cnnFile = open("../data/English/raw/cnn/all.txt", "r", encoding='UTF8')
+    cnnDoc = []
+    cnnTokenized = []
+    while True:
+        line = cnnFile.readline()
+        if len(line) == 0:
+            print("File read finished")
+            break
+        line = re.sub("[^a-zA-Z ]", "", line)
+        tokenized = word_tokenize(line)
+        for word in tokenized:
+            if word == "CNN" or word == "highlight":
+                tokenized.remove(word)
+        cnnTokenized.append(tokenized)
+
+        sent = ""
+        for w in tokenized:
+            sent += (w + " ")
+        cnnDoc.append(sent)
+
+    cnnTF_IDF = vectorizer.fit_transform(cnnDoc)
+    with open("cnn-tf-idf.pkl", 'wb') as handle:
+        pickle.dump(cnnTF_IDF, handle)
+
+    vocabs = vectorizer.get_feature_names()
+    with open("cnn-terms.pkl", 'wb') as handle:
+        pickle.dump(vectorizer.get_feature_names(), handle)
+
+svd = TruncatedSVD(n_components=8)
+svd.fit(cnnTF_IDF)
+topics = svd.components_
+
+for index, topic in enumerate(topics):
+    print("Topic %d : " % (index+1), end="")
+    print([(vocabs[i], topic[i].round(5)) for i in np.abs(topic).argsort()[:-6:-1]])
+```
+
+출력은 다음과 같이 나온다.  
+
+![image](https://user-images.githubusercontent.com/22045424/74267915-4643f980-4d4a-11ea-91c5-08d1a7cc6b77.png)
+
+사실 TfidfVectorizer 의 옵션으로 min_df 라고 너무 자주 나오는 단어를 제외시킬 수가 있는데  
+이걸 처음에 0.5로 했다가 단어가 6개 밖에 안 나오는 참사가 벌어져서 일단 옵션을 default로 넣어놨다. default 는 1이다.  
+이 때문에 너무 자주 나오는 단어 : police, said, obama 등이 나오긴 하지만  
+그래도 3, 4, 6, 8 주제는 얼추 맞춘 것 같다.  
+3번은 미국 정치를 논하는 것 같고, 4번은 누가 봐도 스포츠, 6번은 Travel, 8번은 World 인 것으로 보인다.  
+파라미터를 몇 번 조정해봤는데, 어떨 때는 Health 랑 Entertainment 도 보였다.  
+잘 튜닝하면 이걸로도 8개의 주제는 얼추 맞출 것 같다.  
+
+이렇게 그 어떠한 튜닝 없이 라이브러리 쓰는 것으로 정답률 50%를 달성할 정도로 쉬운 LSA 구현이었다.  
+LSA 의 단점은 그 행렬이 전체 문서를 다 고려해서 계산이 되기 때문에  
+문서 하나가 추가가 되면 또 다시 계산을 해야한다는 단점이 있다.  
+
+Michal Campr와 Karel Ježek 교수의 [논문](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.722.6114&rep=rep1&type=pdf)9(2015)에 따르면  
+Doc2Vec 과 ROUGE1 모델이 문서 요약에 있어서 가장 큰 성능을 보인다고 한다.  
+TF-IDF 와 LSA 도 비교대상에 올랐지만 좋은 성능을 내지 못하였다.  
