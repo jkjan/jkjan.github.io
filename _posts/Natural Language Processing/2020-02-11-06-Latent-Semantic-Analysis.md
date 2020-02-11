@@ -336,6 +336,6 @@ for index, topic in enumerate(topics):
 LSA 의 단점은 그 행렬이 전체 문서를 다 고려해서 계산이 되기 때문에  
 문서 하나가 추가가 되면 또 다시 계산을 해야한다는 단점이 있다.  
 
-Michal Campr와 Karel Ježek 교수의 [논문](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.722.6114&rep=rep1&type=pdf)9(2015)에 따르면  
+Michal Campr와 Karel Ježek 교수의 [논문](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.722.6114&rep=rep1&type=pdf)(2015)에 따르면  
 Doc2Vec 과 ROUGE1 모델이 문서 요약에 있어서 가장 큰 성능을 보인다고 한다.  
 TF-IDF 와 LSA 도 비교대상에 올랐지만 좋은 성능을 내지 못하였다.  
