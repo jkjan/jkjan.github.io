@@ -339,3 +339,24 @@ LSA 의 단점은 그 행렬이 전체 문서를 다 고려해서 계산이 되�
 Michal Campr와 Karel Ježek 교수의 [논문](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.722.6114&rep=rep1&type=pdf)(2015)에 따르면  
 Doc2Vec 과 ROUGE1 모델이 문서 요약에 있어서 가장 큰 성능을 보인다고 한다.  
 TF-IDF 와 LSA 도 비교대상에 올랐지만 좋은 성능을 내지 못하였다.  
+
+
+## 튜닝 후
+
+max_df 를 0.3 으로 조정해봤는데 결과는 이러하다.  
+
+![image](https://user-images.githubusercontent.com/22045424/74270052-eea78d00-4d4d-11ea-9874-2dd10484d10e.png)
+
+2번에 스포츠 주제는 언제나 뚜렷하게 있다.  
+문제는 1, 3, 5, 6이 너무 비슷비슷하다. 특히 6번에는 health 라는 단어까지 들어있다.  
+8번은 국제뉴스인가 싶지만 약간 미심쩍다.  
+
+n_components 를 20으로 늘려봤다.  
+
+![image](https://user-images.githubusercontent.com/22045424/74270020-dafc2680-4d4d-11ea-9e29-3cf78534d9cd.png)
+
+이걸 보고 카테고리에 대한 예측은 이 수준에서 할 수 없음을 알았다.  
+
+애초에 기사 중 미 정부와 시리아 내전에 대한 뉴스가 너무 많아서 정확한 분류가 불가능하다.  
+
+그래도 위 사진의 2, 4, 6, 8, 9, 16, 17, 20 같이 단어가 비슷하게 모인 경우가 많은 걸 보니 아예 잘못된 구현은 아님에 위안을 얻는다.  
