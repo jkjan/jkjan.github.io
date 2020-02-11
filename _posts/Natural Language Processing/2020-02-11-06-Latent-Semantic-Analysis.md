@@ -132,7 +132,7 @@ CNN 의 기사 파일을 받아서, 이를 카테고리별로 나누고 그에 �
 
 코드는 아래와 같다.  
 
-```C++
+```cpp
 #include <iostream>
 #include <dirent.h>
 #include <cstring>
