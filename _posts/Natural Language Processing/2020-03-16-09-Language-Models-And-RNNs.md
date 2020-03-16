@@ -246,9 +246,9 @@ window 로 묶인 단어들에는 공통성(commonality)이 있음에도 불구�
 이 과정을 4번이나 반복하는 것은 비효율적이라는 것이다.  
 
 넷째로 가장 큰 문제로는, 이 fixed-window 신경 언어 모델은  
-입력의 길이가 한정되어 있다는 것이다.  
+입력의 길이가 한정되어 있다는 것이다. (사용자가 지정한 window의 크기로)  
 
-위의 단점에서 생기는 문제들은 이 모델들을 window가 고정하여 단순화하는 가정으로 만들었다는 사실에서 오기 때문이다.  
+여기의 이런 문제들은 이 모델을 window를 고정하여 단순화하는 가정으로 만들어야 했다는 사실에서 오기 때문이다.  
 (Most of these problems here come from the fact that we had to make this simplifying assumption that there was a fixed-window.)  
 
 여기서 이제 새로운 신경망인  
