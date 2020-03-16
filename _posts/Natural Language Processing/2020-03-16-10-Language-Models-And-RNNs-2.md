@@ -1,5 +1,5 @@
 ---
-title : Language Models and RNNs
+title : Language Models and RNNs 2
 categories : [Natural Language Processing]
 date : 2020-03-16
 ---
