@@ -167,17 +167,89 @@ n값이 높을 수록 정확도는 올라가고 (낮은 perplexity), 대신 희�
 n을 늘리면 희소성 문제와 모델의 크기도 덩달아 증가한다.  
 
 
-# 신경 언어 모델 (Neural Language Model)  
+# fixed-window 신경 언어 모델 (Neural Language Model)  
 
 언어 모델에 딥 러닝을 접목시켜 보자.  
 
 단어를 한 벡터로 표현하기 위해 한 벡터를 신경망을 이용해 학습시켜  
 단어를 벡터로 임베딩 하는 것이다.  
 
-신경 언어 모델은 신경망과 비슷한 구조를 가진다.  
+fixed-window 신경 언어 모델은 신경망과 비슷한 구조를 가진다.  
 
 여기서는 n-gram 이라는 용어를 대신해 window 라는 단어를 사용한다.  
 window 는 앞의 몇 단어를 고려할지를 나타내는 단어로, window가 4라면 예측하려는 부분의 앞 4개까지만 살핀다.  
 
-![nlm](data:image/png;base64,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)
+![nlm](https://www.programmersought.com/images/720/ada6f4bb80b1904bc8430a89bb49f4d0.png)
 
+맨 밑의 검은색 글씨들을 보자.  
+
+i번째 단어를 택하려면, one-hot 벡터인 ![xi](https://latex.codecogs.com/gif.latex?x%5Ei)를 통하여 고르게 된다.  
+단어들의 임베딩된 벡터들을 모아놓은 행렬 ![e](https://latex.codecogs.com/gif.latex?e)와 이 one-hot 벡터를 곱하면  
+해당 단어의 임베딩된 벡터를 얻을 수 있다.  
+단어 수를 V, 벡터의 차원을 D라 했을 때 행렬 ![e](https://latex.codecogs.com/gif.latex?e)는 DxV의 크기를 가지고,  
+따라서 파란색 글씨에서, 이 행렬과 Vx1 크기의 행렬 ![xi](https://latex.codecogs.com/gif.latex?x%5Ei)와 곱하면 Dx1 크기의 행렬, 즉 D 차원의 벡터 - i번째 단어의 임베딩 벡터가 나온다.  
+
+행렬 ![e](https://latex.codecogs.com/gif.latex?e)를 사전이라 생각하면 이 작업은  
+여기서 i번째 벡터를 찾는 것(look up)으로 생각할 수 있는데  
+따라서 이 행렬 ![e](https://latex.codecogs.com/gif.latex?e)를 look up matrix라고도 한다.  
+
+이렇게 찾아진 ![e1](https://latex.codecogs.com/gif.latex?e%5E1), ![e2](https://latex.codecogs.com/gif.latex?e%5E2), ![e3](https://latex.codecogs.com/gif.latex?e%5E3), ![e4](https://latex.codecogs.com/gif.latex?e%5E4) 벡터들을 연결하여(concatenate) 최종적인 ![e](https://latex.codecogs.com/gif.latex?e) 행렬을 만든다.  
+
+붉은 글씨인 hidden layer (은닉층)에서는  
+여기서 구한 위에서 구한 임베딩된 벡터와 가중치를 곱하고 편향을 더하고 (affine)  
+이를 비선형 함수 (활성 함수)에 넣어 h 값을 구한다.  
+
+초록색 글씨, output 에서는 이 h를 출력 함수에 넣고 소프트맥스 함수를 취한 뒤  
+![yhat](https://latex.codecogs.com/gif.latex?%5Chat%7By%7D)을 구하게 된다.  
+
+이 벡터는 이제 V개의 단어마다 'the students opened their' 다음에 올 확률을 구하는 벡터가 된다.  
+사람이 입력한 정답과 비교하여 손실함수와 역전파로 가중치를 수정한다.  
+
+위 학습을 진행한다면,  
+V개의 단어 중 'books'와 'laptops'라는 단어의 벡터가 가장 높게 나타날 것이다.  
+
+## 장점
+
+이 fixed-window 신경 언어 모델을 n-gram 언어 모델과 비교했을 때 장점은  
+첫째로 희소성 문제가 사라진다는 점이다.  
+n-gram 언어 모델은 데이터가 없을 시 모든 확률이 0이 돼버리는 희소성 문제가 있지만  
+fixed-window 신경 언어 모델은 가중치와 임베딩 벡터로 구하므로 데이터에 없더라도 0이 되는 문제는 발생하지 않는다.  
+
+둘째로, 단어를 계수한 모든 데이터를 저장할 필요가 없다.  
+
+## 단점
+
+첫째, window 의 개수가 너무 작다는 것이다.  
+이렇게 되면 앞의 단어가 문맥 상 중요한데도 보지 못하는 문제가 발생한다.  
+
+둘째, window 의 크기를 늘리게 되면 가중치 행렬 W도 증가한다.  
+파란 글씨의 단계에서 만든 행렬 ![e](https://latex.codecogs.com/gif.latex?e)는  
+Dx1 크기의 벡터 4개를 이은 (concatenated) 벡터기 때문에 4Dx1 크기의 벡터이다.  
+
+가중치 행렬 W를 이와 곱하려면 Vx4D 의 크기를 가져야 한다. (그래야 마지막에 Vx1 행렬이 나옴)  
+때문에 window 크기를 늘리면 늘어나는 저장공간의 수는 임베딩 되는 벡터의 차원만큼 증가한다.  
+(the width of W grows as you increase the size of the window)  
+하지만 window 의 크기는 절대 적당해질 수가 없다.  
+희소성 문제가 사라진 시점에서, window의 크기는 크면 클 수록 높은 정확도를 보일 것이다.  
+
+셋째, 입력값이 처리되는 과정이 균등하지 않다.  
+
+![그림1](https://user-images.githubusercontent.com/22045424/76730405-83af0300-679e-11ea-80cb-4d433607b222.png)
+
+가중치 행렬 W와 임베딩 벡터 ![e](https://latex.codecogs.com/gif.latex?e) 를 곱할 때의 과정을  
+다음과 같이 그림으로 표현할 때  
+1은 1끼리, 2는 2끼리 곱해지게 되는데,  
+따라서 한 학습에서 배우는 것은 옆의 단어들과 공유하지 않는다.  
+그저 한 번의 학습 과정을 (similar function)을 4번 반복하는 것이다.  
+
+window 로 묶인 단어들에는 공통성(commonality)이 있음에도 불구하고  
+이 과정을 4번이나 반복하는 것은 비효율적이라는 것이다.  
+
+넷째로 가장 큰 문제로는, 이 fixed-window 신경 언어 모델은  
+입력의 길이가 한정되어 있다는 것이다.  
+
+위의 단점에서 생기는 문제들은 이 모델들을 window가 고정하여 단순화하는 가정으로 만들었다는 사실에서 오기 때문이다.  
+(Most of these problems here come from the fact that we had to make this simplifying assumption that there was a fixed-window.)  
+
+여기서 이제 새로운 신경망인  
+RNN (Recurrent Neural Networks) 가 등장하게 된다.  
