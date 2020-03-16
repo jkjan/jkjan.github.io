@@ -4,6 +4,9 @@ categories : [Natural Language Processing]
 date : 2020-03-16
 ---
 
+본 글은 스탠포드 대학의 '딥 러닝을 이용한 자연어 처리' (Natural Language Processing with Deep Learning),  
+[CS224N의 6번째 강의](https://www.youtube.com/watch?v=iWea12EAu6U&list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z&index=6)를 번역, 요약 후 이해를 돕기 위한 부가설명을 추가한 글이다.  
+
 # RNN (Recurrent Neural Network)
 
 언어 모델, 그리고 그 중 fixed-window 신경 언어 모델은  
