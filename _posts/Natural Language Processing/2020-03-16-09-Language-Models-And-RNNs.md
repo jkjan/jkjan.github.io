@@ -25,7 +25,7 @@ date : 2020-03-16
 # n-gram
 
 언어 모델의 일종으로 n-gram 언어 모델을 들 수 있다.  
-n-gram 은 n개의 연속되는 단어의 모임이다. (A n-gram is a chunk of n consecutive words)  
+n-gram 은 n개의 연속되는 단어의 모임이다. (An n-gram is a chunk of n consecutive words)  
 
 앞 글에서 설명했듯 확률을 계산하려 할 때 맨 앞의 단어까지 다 고려하면  
 확률은 매우 낮아지며 (1보다 작은 값을 계속 곱하므로)  
