@@ -56,7 +56,7 @@ n-gram 언어 모델은 ![x(t+1)](https://latex.codecogs.com/gif.latex?x%5E%7Bt&
 이를 수식으로 나타낸다면  
 ![assumption](https://latex.codecogs.com/gif.latex?P%28x%5E%7Bt&plus;1%7D%7Cx%5E%7Bt%7D%2C%20...%20x%5E1%29%20%3D%20P%28x%5E%7Bt&plus;1%7D%7Cx%5Et%2C%20...%2C%20x%5E%7Bt-n&plus;2%7D%29)  
 
-즉, 조건부 확률의 정의 ![cond_prob](https://latex.codecogs.com/gif.latex?P%28A%7CB%29%3D%5Cfrac%7BP%28A%5Cbigcap%20B%29%7D%7BP%28A%29%7D)에 따라  
+즉, 조건부 확률의 정의 ![cond_prob](https://latex.codecogs.com/gif.latex?P%28B%7CA%29%20%3D%20%5Cfrac%7BP%28A%5C%3B%7B%5Ccap%7DB%29%7D%7BP%28A%29%7D)에 따라  
 
 ![n-grams](https://latex.codecogs.com/gif.latex?%5Cfrac%7BP%28x%5E%7Bt&plus;1%7D%2C%20x%5Et%2C%20...%20x%5E%7Bt-n&plus;2%7D%29%7D%7BP%28x%5Et%2C%20...%20x%5E%7Bt-n&plus;2%7D%29%7D) 와 같다.  
 
@@ -249,7 +249,7 @@ window 로 묶인 단어들에는 공통성(commonality)이 있음에도 불구�
 넷째로 가장 큰 문제로는, 이 fixed-window 신경 언어 모델은  
 입력의 길이가 한정되어 있다는 것이다. (사용자가 지정한 window의 크기로)  
 
-여기의 이런 문제들은 이 모델을 window를 고정하여 단순화하는 가정으로 만들어야 했다는 사실에서 오기 때문이다.  
+여기의 이 문제들은 이 모델을 window를 고정하여 단순화하는 가정으로 만들어야 했기 때문이다.  
 (Most of these problems here come from the fact that we had to make this simplifying assumption that there was a fixed-window.)  
 
 여기서 이제 새로운 신경망인  
