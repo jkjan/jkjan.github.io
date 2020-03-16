@@ -41,9 +41,10 @@ unigrams(1), bigrams(2), trigrams(3), 4-grams(4)로 불리게 된다.
 ![perplexity](https://latex.codecogs.com/gif.latex?PP%28W%29%3D%5Csqrt%5B%5Cleftroot%7B-2%7D%5Cuproot%7B2%7DN%5D%20%7B%5Cprod%20_%7Bi%3D1%7D%20%5EN%20%5Cfrac%7B1%7D%7BP%28w_%7Bi%7D%7Cw_%7Bi-1%7D%29%29%7D%7D)
 의 식으로 perplexity 를 계산했을 때  
 n의 따른 결과는  
-|unigrams|bigrams|trigrams|
-|:---:|:---:|:---:|
-|962|170|109|
+
+|unigrams|bigrams|trigrams|  
+|:---:|:---:|:---:|  
+|962|170|109|  
 
 와 같으며 이로써 n의 값이 높을 수록 정확해짐을 알 수 있다. (perplexity는 '당혹감'이란 뜻으로 값이 낮을 수록 좋다.)  
 예컨데 I __ , I am __ , I am like __ 를 주었을 때  
