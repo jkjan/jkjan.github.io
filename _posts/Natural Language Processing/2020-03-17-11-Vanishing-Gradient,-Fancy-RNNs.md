@@ -241,7 +241,7 @@ GRU에서는 전 단계에서 reset할 것, 그리고 거기서 update 할 것�
 reset gate는 새 hidden state 을 계산하기 위해서 이전 hidden state의 어떤 부분이 사용될 지를 정한다.  
 
 이 두 gate들을 이용하여 hidden state는 다음과 같이 게산되는데  
-![gru](https://latex.codecogs.com/gif.latex?%5C%5C%20%5Ctilde%20h%5E%7B%28t%29%7D%20%3D%20%5Ctanh%20%5Cleft%28W_h%20%5Cleft%20%28r%5E%7B%28t%29%7D%20%5Ccdot%20h%5E%7B%28t-1%29%7D%20&plus;%20U_h%20x%5E%7B%28t%29%7D%20&plus;%20b_h%20%5Cright%20%29%20%5Cright%20%29%20%5C%5C%20h%5E%7B%28t%29%7D%20%3D%20%281%20-%20u%5E%7B%28t%29%7D%29%20%5Ccdot%20h%5E%7B%28t-1%29%7D%20&plus;%20u%5E%7B%28t%29%7D%20%5Ccdot%20%5Ctilde%20h%5E%7B%28t%29%7D)  
+![gru](https://latex.codecogs.com/gif.latex?%5C%5C%20%5Ctilde%20h%5E%7B%28t%29%7D%20%3D%20%5Ctanh%20%5Cleft%28W_h%20%5Cleft%20%28r%5E%7B%28t%29%7D%20%5Ccdot%20h%5E%7B%28t-1%29%7D%20%5Cright%20%29&plus;%20U_h%20x%5E%7B%28t%29%7D%20&plus;%20b_h%20%5Cright%20%29%20%5C%5C%20h%5E%7B%28t%29%7D%20%3D%20%281%20-%20u%5E%7B%28t%29%7D%29%20%5Ccdot%20h%5E%7B%28t-1%29%7D%20&plus;%20u%5E%7B%28t%29%7D%20%5Ccdot%20%5Ctilde%20h%5E%7B%28t%29%7D)  
 
 새 h는 이전의 h를 reset gate를 통과 시킨 다음 하이퍼볼릭탄젠트 함수를 취한 것이고  
 실제 적용되는 h는 이전 h를 방금 계산된 새 h에서 update 시킬 만큼만 update 시킨 값이다.  
