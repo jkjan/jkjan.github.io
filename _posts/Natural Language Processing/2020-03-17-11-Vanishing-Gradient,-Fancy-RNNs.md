@@ -181,16 +181,16 @@ gate에는 forget, input, output의 세 종류가 있다.
 
 (여기서 W는 ![Wh](https://latex.codecogs.com/gif.latex?W_h)에 해당하고 U는 ![Wx](https://latex.codecogs.com/gif.latex?W_x)에 해당한다.)  
 
-forget gate는 이전 cell state에서 어떤 정보를 지우거나(forget) 가져갈지(keep)를 결정하고 (지우고)
-input gate는 위에서 계산된 새 cell의 내용에서 어떤 내용을 cell 에 쓸지를 정하고 (저장하고)  
-output gate는 어떤 cell 의 내용이 hidden state로 출력될지를 정한다. (읽고)  
+forget gate는 이전 cell state에서 어떤 정보를 지우거나(forget) 가져갈지(keep)를 결정하고 (지우고)  
+input gate는 위에서 계산된 새 cell의 내용에서 어떤 내용을 cell 에 쓸지를 정하고 (저장하고)   
+output gate는 어떤 cell 의 내용이 hidden state로 출력될지를 정한다. (읽고)   
 활성화 함수가 시그모이드인 점에서 알 수 있든 gate의 원소는 0~1사이의 값을 가진다.  
 
 잘 보면 gate들은 이전 상태의 hidden state와 현재의 input인 x에 의해서 결정되는데  
 따라서 gate들의 값은 동적으로 문맥에 따라 결정된다. (dynamic)  
 
 새로이 계산된 cell state ![ctilde](https://latex.codecogs.com/gif.latex?%5C%5C%20%5C%7E%7Bc%7D%5E%7B%28t%29%7D)와  
-그중 지울 건 지우고 (forget gate), 이전 cell에서 가져갈 건 가져간 (input gate) cell state, ![c](https://latex.codecogs.com/gif.latex?%5C%5C%20%7Bc%7D%5E%7B%28t%29%7D) 
+그중 지울 건 지우고 (forget gate), 이전 cell에서 가져갈 건 가져간 (input gate) cell state, ![c](https://latex.codecogs.com/gif.latex?%5C%5C%20%7Bc%7D%5E%7B%28t%29%7D)  
 cell state에서 출력된 값을 선별해 계산한 새로운 hidden state ![ht](https://latex.codecogs.com/gif.latex?h%5E%7B%28t%29%7D)는 다음과 같이 계산된다.   
 
 ![cellstates](https://latex.codecogs.com/gif.latex?%5C%5C%20%5C%7E%7Bc%7D%5E%7B%28t%29%7D%20%3D%20%5Ctanh%20%5Cleft%28W_c%20h%5E%7B%28t-1%29%7D%20&plus;%20U_c%20x%5E%7B%28t%29%7D%20&plus;%20b_c%20%5Cright%20%29%20%5C%5C%20c%5E%7B%28t%29%7D%20%3D%20f%5E%7B%28t%29%7D%20%5Ccdot%20c%5E%7B%28t-1%29%7D%20&plus;%20i%5E%7B%28t%29%7D%20%5Ccdot%20%5C%7E%7Bc%7D%5E%7B%28t%29%7D%20%5C%5C%20h%5E%7B%28t%29%7D%20%3D%20o%5E%7B%28t%29%7D%20%5Ccdot%20%5Ctanh%20c%5E%7B%28t%29%7D) 
@@ -198,10 +198,11 @@ cell state에서 출력된 값을 선별해 계산한 새로운 hidden state ![h
 첫째 줄에서는 이전의 Vanilla RNN과 마찬가지로 이전 단계의 hidden state와 현재 입력을 이용해 새로 계산을 하는 것이다.  
 달라진 점이라면 활성화 함수로 시그모이드가 아닌 하이퍼볼릭 탄젠트 함수를 이용했다는 점이다.  
 
-이렇게 계산된 새로운 cell state에서 과거 단계에서 잊을 것은 잊고 (![forget](https://latex.codecogs.com/gif.latex?f%5E%7B%28t%29%7D%20%5Ccdot%20c%5E%7B%28t-1%29%7D))  
-가져갈 것은 가져간다. (![input](https://latex.codecogs.com/gif.latex?i%5E%7B%28t%29%7D%20%5Ccdot%20%5C%7E%7Bc%7D%5E%7B%28t%29%7D))  
+이렇게 계산된 새로운 cell state에서 과거 단계에서 잊을 것은 잊고 (![forget](https://latex.codecogs.com/gif.latex?f%5E%7B%28t%29%7D%20%5Ccdot%20c%5E%7B%28t-1%29%7D))   
+가져갈 것은 가져간다. (![input](https://latex.codecogs.com/gif.latex?i%5E%7B%28t%29%7D%20%5Ccdot%20%5C%7E%7Bc%7D%5E%7B%28t%29%7D))   
   
-이 cell state에서 내보낼 것을 내보내서 (![output](https://latex.codecogs.com/gif.latex?o%5E%7B%28t%29%7D%20%5Ccdot%20%5Ctanh%20c%5E%7B%28t%29%7D)) 최종적으로 해당 단계의 hidden state가 결정된다.  
+이 cell state에서 내보낼 것을 내보내서 (![output](https://latex.codecogs.com/gif.latex?o%5E%7B%28t%29%7D%20%5Ccdot%20%5Ctanh%20c%5E%7B%28t%29%7D))  
+최종적으로 해당 단계의 hidden state가 결정된다.  
 
 이렇게 LSTM을 사용한다면, 많은 단계 동안 정보를 보존하는 것이 일반 RNN 보다 쉬워지며  
 반복적으로 적용되는(recurrent) 가중치 행렬 ![Wh](https://latex.codecogs.com/gif.latex?W_h)가 hidden state 안의 정보를 쉽게 보존할 수 있다.  
