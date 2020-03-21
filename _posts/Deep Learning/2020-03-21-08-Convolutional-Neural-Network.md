@@ -171,6 +171,6 @@ average pooling (평균을 고름)으로 나뉘게 된다.
 
 이렇게 필터를 거치는 이미지는  
 기존의 1차원 벡터와 달리  
-![cnn_filter](https://ujwlkarn.files.wordpress.com/2016/08/giphy.gif?w=480&zoom=2)   
+![cnn_filter](https://www.researchgate.net/profile/Yu_Lu17/publication/331611191/figure/fig1/AS:742686420119558@1554081649888/Visualizations-of-CNN-filters-and-their-outputs-a-The-96-groups-of-CNN-filters-from.png)   
 이렇게 엣지와 모양, 재질 따위를 학습할 수 있다.  
 
